@@ -13,11 +13,11 @@ char *_getline_command(void)
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2); /* blinking command prompt input prompt*/
 
-	if (getline(&lineptr, &char_user, stdin) == -1) /* collects data through std input */
+	if (getline(&lineptr, &char_user, stdin) == -1)
 	{
 		free(lineptr); /* frees buffer after reading line */
 		return (NULL);
 	}
 
-	return (lineptr); 
+	return (lineptr);
 }
